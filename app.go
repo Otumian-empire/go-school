@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func main() {
 	// fmt.Println("Helloworld go - tutorialspoint")
 
@@ -177,6 +179,46 @@ func main() {
 		fmt.Println("My name is", myName)
 		fmt.Println("my name is about", lenMyName, "characters long")
 	*/
+
+	// arrays
+
+	// declaring arrays
+	/*
+		var variable_name [SIZE] variable_type
+	*/
+	/*
+		var numbers [5]int
+
+		numbers[0] = 2
+
+		fmt.Println(numbers)
+
+		for i := 1; i < 5; i++ {
+			numbers[i] = i * i
+		}
+		fmt.Println(numbers)
+
+		// Initializing Arrays
+		var someNumber = [5]int{0, 1, 10, 11, 12}
+		fmt.Println(someNumber)
+
+		for i := 0; i < 5; i++ {
+			fmt.Println(numbers[i] + someNumber[0])
+		}
+
+		// n-Dimensional array
+		var twoDArray = [2][2]int{{1, 2}, {3, 4}}
+
+		fmt.Println(twoDArray)
+
+		for row := 0; row < 2; row++ {
+			for col := 0; col < 2; col++ {
+				fmt.Println("row", row, ", col", col, ":", twoDArray[row][col])
+			}
+		}
+
+		printArrayI([]int{2,3,4,5,6})
+	*/
 }
 
 /*
@@ -207,3 +249,12 @@ func swap(a, b int) (int, int) {
 		return b,a
 	}
 */
+
+/**
+*Prints the content of a given integer array
+ */
+func printArrayI(intArr []int) {
+	for index, element := range intArr {
+		fmt.Println(index, "has the value", element)
+	}
+}
