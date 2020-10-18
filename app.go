@@ -133,4 +133,77 @@ func main() {
 		}
 	*/
 
+	/*
+		for [condition |  ( init; condition; increment ) | Range] {
+		   statement(s);
+		}
+	*/
+
+	/*
+		for i := 0; i < 5; i++ {
+			fmt.Println(i, " - ", i*i)
+		}
+
+		var i, sumi int = 0, 0
+		for i < 10 {
+			i++
+			sumi++
+		}
+		fmt.Println(sumi)
+
+		numbers := [5]int{1, 2, 3, 4, 5}
+		var sumElements int = 0
+
+		for index, element := range numbers {
+			fmt.Println("There is", element, "at position", index, "of the array")
+			sumElements += element
+		}
+		fmt.Println(sumElements)
+	*/
+
+	// using a function
+	/*
+		var maxVal = max(4, 6)
+		fmt.Println(maxVal)
+	*/
+
+	// strings
+	/*
+		var myName = "Daniel Cormier"
+
+		// len of string
+		var lenMyName = len(myName)
+
+		fmt.Println("My name is", myName)
+		fmt.Println("my name is about", lenMyName, "characters long")
+	*/
 }
+
+/*
+	func function_name( [parameter list] ) [return_types]
+	{
+	   body of the function
+	}
+*/
+func max(num1, num2 int) int {
+	/* local variable declaration */
+	var result int
+
+	if num1 >= num2 {
+		result = num1
+	} else {
+		result = num2
+	}
+	return result
+}
+
+func swap(a, b int) (int, int) {
+	return b, a
+}
+
+// the above function is the sa,me as the below code
+/*
+	func swap(a int, b int) (int, int) {
+		return b,a
+	}
+*/
