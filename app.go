@@ -274,41 +274,88 @@ func main() {
 
 		fmt.Println("The factorial of 5 is", factorial(5))
 	*/
-	
+
 	// type casting
 	// type_name(expression)
 
-	var totalScore, numberOfTest int = 10, 97
+	/*
+		var totalScore, numberOfTest int = 10, 97
 
-	var average float32 = float32(totalScore / numberOfTest)
-	fmt.Println("Average:", average)
+		var average float32 = float32(totalScore / numberOfTest)
+		fmt.Println("Average:", average)
 
-	var average1 float32 = float32(totalScore) / float32(numberOfTest)
-	fmt.Println("Average1:", average1)
+		var average1 float32 = float32(totalScore) / float32(numberOfTest)
+		fmt.Println("Average1:", average1)
+	*/
 
+	// interface
+
+	pitbull := English{name: "John Doe"}
+	squash := Arab{name: "Salman Doe"}
+
+	pitbull.sayHello()
+	squash.sayHello()
+
+}
+
+/*
+	type interface_name interface {
+		method_name() return_type
+		...
+		method_nameX() return_type
+	}
+*/
+
+// Human insterface
+type Human interface {
+	sayHello()
+}
+
+// Call the object that implements the Human interface
+func objectSayHello(human Human) {
+	human.sayHello()
+}
+
+// English object to use Human inteterface
+type English struct {
+	name string
+}
+
+// Arab object to use Human inteterface
+type Arab struct {
+	name string
+}
+
+// Implementing the interface for the English man
+func (patrick English) sayHello() {
+	fmt.Println("Hello," + patrick.name + ".")
+}
+
+func (hassan Arab) sayHello() {
+	fmt.Println("Halu," + hassan.name + ".")
 }
 
 // Factorial : this is a dimple factorial program using recursion
-func factorial(n int) int {
-	if n <= 1 {
-		return 1
-	}
+// func factorial(n int) int {
+// 	if n <= 1 {
+// 		return 1
+// 	}
 
-	return n * factorial(n-1)
+// 	return n * factorial(n-1)
 
-}
+// }
 
-// Profile this is a profile struct
-type Profile struct {
-	name   string
-	age    int
-	height float32
-}
+// // Profile this is a profile struct
+// type Profile struct {
+// 	name   string
+// 	age    int
+// 	height float32
+// }
 
-func printProfile(prof Profile) {
-	fmt.Println("My name is", prof.name, ", I am", prof.age, "years old.")
-	fmt.Println("I am", prof.height)
-}
+// func printProfile(prof Profile) {
+// 	fmt.Println("My name is", prof.name, ", I am", prof.age, "years old.")
+// 	fmt.Println("I am", prof.height)
+// }
 
 /*
 	func function_name( [parameter list] ) [return_types]
@@ -316,21 +363,22 @@ func printProfile(prof Profile) {
 	   body of the function
 	}
 */
-func max(num1, num2 int) int {
-	/* local variable declaration */
-	var result int
 
-	if num1 >= num2 {
-		result = num1
-	} else {
-		result = num2
-	}
-	return result
-}
+// func max(num1, num2 int) int {
+// local variable declaration
+// 	var result int
 
-func swap(a, b int) (int, int) {
-	return b, a
-}
+// 	if num1 >= num2 {
+// 		result = num1
+// 	} else {
+// 		result = num2
+// 	}
+// 	return result
+// }
+
+// func swap(a, b int) (int, int) {
+// 	return b, a
+// }
 
 // the above function is the sa,me as the below code
 /*
@@ -339,11 +387,9 @@ func swap(a, b int) (int, int) {
 	}
 */
 
-/**
-*Prints the content of a given integer array
- */
-func printArrayI(intArr []int) {
-	for index, element := range intArr {
-		fmt.Println(index, "has the value", element)
-	}
-}
+// Prints the content of a given integer array
+// func printArrayI(intArr []int) {
+// 	for index, element := range intArr {
+// 		fmt.Println(index, "has the value", element)
+// 	}
+// }
