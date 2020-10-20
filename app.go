@@ -219,6 +219,95 @@ func main() {
 
 		printArrayI([]int{2,3,4,5,6})
 	*/
+
+	// structure
+	/*
+		type struct_variable_type struct {
+			member definition;
+			member definition;
+			...
+			member definition;
+		 }
+	*/
+
+	/*
+		var micsProf Profile
+
+		micsProf.name = "John Doe"
+		micsProf.age = 32
+		micsProf.height = 6.4
+
+		printProfile(micsProf)
+
+		// map = key => value pair
+		// var_name := map[key_dt]value_dt {key:val, ..., keyn:valn}
+		sid := map[string]string{"name": "Predentition", "age": "23 guest"}
+
+		fmt.Println("Sids name is", sid["name"])
+		fmt.Println("Sid is", sid["age"], "years old")
+		// var var_name map[key_type]value_type
+		var myMap map[string]string
+		myMap = make(map[string]string)
+
+		myMap["name"] = "John Doe"
+		myMap["age"] = "34 years"
+
+		fmt.Println("Sids name is", myMap["name"])
+		fmt.Println("Sid is", myMap["age"])
+
+		key, exists := sid["age"]
+
+		if exists {
+			fmt.Println(key, "exists")
+		} else {
+			myMap["age"] = "40"
+		}
+
+		for key := range sid {
+			fmt.Println(key, "=>", sid[key])
+		}
+
+		// delete from the map
+		delete(sid, "age")
+
+		fmt.Println(sid)
+
+		fmt.Println("The factorial of 5 is", factorial(5))
+	*/
+	
+	// type casting
+	// type_name(expression)
+
+	var totalScore, numberOfTest int = 10, 97
+
+	var average float32 = float32(totalScore / numberOfTest)
+	fmt.Println("Average:", average)
+
+	var average1 float32 = float32(totalScore) / float32(numberOfTest)
+	fmt.Println("Average1:", average1)
+
+}
+
+// Factorial : this is a dimple factorial program using recursion
+func factorial(n int) int {
+	if n <= 1 {
+		return 1
+	}
+
+	return n * factorial(n-1)
+
+}
+
+// Profile this is a profile struct
+type Profile struct {
+	name   string
+	age    int
+	height float32
+}
+
+func printProfile(prof Profile) {
+	fmt.Println("My name is", prof.name, ", I am", prof.age, "years old.")
+	fmt.Println("I am", prof.height)
 }
 
 /*
